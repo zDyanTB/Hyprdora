@@ -85,7 +85,7 @@ install_starship() {
 
 # Code run ===========================================================
 
-# Installing Catppuccin GTK Theme
+# -- Installing Catppuccin GTK Theme --
 echolorize "blue" "Installing Catppuccin GTK Theme..."
 
 download_themes &&
@@ -95,7 +95,7 @@ mv * "$themes_dir/" &&
 echolorize "green" "Catppuccin GTK Installed!"
 cd .. && rm -Rf gtk-catppuccin/
 
-# Installing McMuse-Circle Icon theme
+# -- Installing McMuse-Circle Icon theme --
 echolorize "blue" "Installing McMuse-Circle icon theme..."
 
 git clone https://github.com/yeyushengfan258/McMuse-circle &&
@@ -104,3 +104,16 @@ cd McMuse-circle/ &&
 
 echolorize "green" "McMuse Icon Theme Installed!"
 cd .. && rm -Rf McMuse-circle/
+
+
+# -- Installing Feral Gamemode --
+echolorize "blue" "Installing Feral Gamemode..."
+
+git clone https://github.com/FeralInteractive/gamemode.git &&
+cd gamemode &&
+git checkout 1.8.1 && # omit to build the master branch
+./bootstrap.sh
+
+# Adding user to gamemode group to avoid errors
+sudo usermod -a -G gamemode $USER
+
