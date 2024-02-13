@@ -1,0 +1,16 @@
+jq
+curl
+git
+unzip
+cargo
+python3-pip
+pkg-config
+ninja-build
+meson
+qt5-qtbase
+qt5-qtsvg
+qt5-qttools
+mesa-vulkan-drivers
+mesa-vulkan-drivers:i386
+btrfs-progs
+wget

@@ -6,17 +6,7 @@ set -e
 themes_dir="$HOME/.themes"
 icons_dir="$HOME/.icons"
 
-# TODO
-# DOWNLOAD
-# jq
-# curl
-# git
-# unzip
-# cargo
-# python3-pip
-# pkg-config
-# ninja-build
-# meson
+
 # TODO
 # initiate GTK dark mode and apply icon and cursor theme
 # gsettings set org.gnome.desktop.interface color-scheme prefer-dark > /dev/null 2>&1 &
@@ -120,6 +110,21 @@ install_starship() {
 }
 
 # Code run ===========================================================
+
+echolorize "blue" "Updating system..."
+sudo dnf update -y
+
+echolorize "blue" "Installing dependencies..."
+
+dependencies_file="dependencies"
+install_command="sudo dnf install -y"
+
+if [ ! -f "$dependencies_file" ]; then
+    echolorize "red" "Dependencies file '$dependencies_file' not found!"
+    exit 1
+fi
+
+$install_command $(cat "$dependencies_file")
 
 # -- Installing Catppuccin GTK Theme --
 echolorize "blue" "Installing Catppuccin GTK Theme..."
