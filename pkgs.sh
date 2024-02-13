@@ -1,0 +1,46 @@
+pkgs=(
+    jq
+    curl
+    git
+    cargo
+    python3-pip
+    pkg-config
+    ninja-build
+    meson
+    qt5-qtbase
+    qt5-qtsvg
+    qt5-qttools
+    qt5ct
+    qt6-qtsvg
+    qt6ct
+    mesa-vulkan-drivers
+    mesa-vulkan-drivers:i386
+    btrfs-progs
+    wget
+)
+
+extra=(
+    unrar
+    unzip
+    nano
+    exa
+)
+
+flatpakApps=(
+    org.qbittorrent.qBittorrent
+    net.agalwood.Motrix
+    com.discordapp.Discord
+    com.github.GradienceTeam.Gradience
+    com.bitwarden.desktop
+    net.ankiweb.Anki
+    org.mozilla.Thunderbird 
+    com.usebottles.bottles  
+    org.telegram.desktop 
+    md.obsidian.Obsidian
+    com.ticktick.TickTick
+    com.visualstudio.code
+    com.spotify.Client
+    im.riot.Riot
+    hu.kramo.Cartridges
+    io.github.Foldex.AdwSteamGtk
+)
